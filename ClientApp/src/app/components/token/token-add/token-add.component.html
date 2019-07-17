@@ -1,0 +1,124 @@
+<div class="page-inner">
+    <div class="page-header">
+      <h4 class="page-title">Add New Problem</h4>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title">Capture The Problem</h4>
+          </div>
+
+            <div class="card-body" *ngIf="userDetails">
+              <div class="row"> 
+            <form #form = "ngForm" (submit) = "onSubmit(form)">
+            <!-- <input type="text" name="AddedBy" #AddedBy="ngModel" [value]="userDetails.UserName" 
+            [(ngModel)]="token.AddedBy" [hidden]="true"> -->
+
+              <div class="row">               
+                <div class="col-md-5">
+                  <div class="input-file input-file-image">
+                    <img class="img-upload-preview img-circle" width="100" height="100"
+                      src="https://placehold.it/100x100" alt="preview">
+                    <input type="file" class="form-control form-control-file" >
+                    <label for="ImageFile1" class="badge badge-primary">
+                      <span class="btn-label">
+                        <i class="fa fa-file-image"></i>
+                      </span>
+                      Add New
+                    </label>
+                  </div>
+                </div>
+
+                <div class="col-md-5">
+                  <div class="input-file input-file-image">
+                    <img class="img-upload-preview img-circle" width="100" height="100"
+                      src="https://placehold.it/100x100" alt="preview">
+                    <input type="file" class="form-control form-control-file" id="ImageFile2">
+                    <label for="ImageFile2" class="badge badge-primary">
+                      <span class="btn-label">
+                        <i class="fa fa-file-image"></i>
+                      </span>
+                      Add New
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h4 class="card-title">More Information about Problem</h4>
+                  </div>
+                  <div class="card-body">
+                <div class="row">
+
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label>Problem Name</label>
+                          <div class="input-group">
+                            <input type="text" class="form-control" id="ProblemName" name="ProblemName"
+                            #ProblemName="ngModel" [(ngModel)]="token.ProblemName" required>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label>Attention Level</label>
+                          <div class="input-group">
+                            <input type="number" class="form-control" id="AttentionLevel" name="AttentionLevel"
+                            #AttentionLevel="ngModel" [(ngModel)]="token.AttentionLevel" required>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label>Problem Category</label>
+                          <div class="input-group">
+                            <select id="basic" name="ProblemCategory" class="form-control" required>
+                                <option disabled>--Please Select--</option>
+                                <option value="Sustainability">Sustainability</option>
+                                <option value="Safety">Safety</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label>Location</label>
+                          <div class="input-group">
+                            <input type="text" class="form-control" id="Location" name="Location" #Location="ngModel"
+                            [(ngModel)]="token.Location" required>
+                          </div>
+                        </div>
+                      </div>
+
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label for="comment">Problem in Brief</label>
+                      <textarea class="form-control" id="comment" rows="5" name="Description"
+                      #Description="ngModel" [(ngModel)]="token.Description" required></textarea>     
+                    </div>
+                  </div>
+
+                  <div class="col-md-12">
+                    <div class="form-group">
+                    <input type="submit" value="Add Token" class="btn btn-info btn-block" />
+                  </div>
+                  </div>
+                  </div>
+                  </div>
+
+                 </div>
+              </div>
+            </div>
+          </form>
+          </div>
+        </div>
+      </div>
+    </div>

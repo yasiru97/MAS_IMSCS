@@ -1,0 +1,98 @@
+<div class="content">
+  <div class="page-inner">
+    <div class="page-header">
+      <h4 class="page-title">Problems</h4>
+     <!--- <ul class="breadcrumbs">
+        <li class="nav-home">
+          <a href="#">
+            <i class="flaticon-home"></i>
+          </a>
+        </li>
+        <li class="separator">
+          <i class="flaticon-right-arrow"></i>
+        </li>
+        <li class="nav-item">
+          <a href="#">Catalog</a>
+        </li>
+        <li class="separator">
+          <i class="flaticon-right-arrow"></i>
+        </li>
+        <li class="nav-item">
+          <a href="#">Manufacturers </a>
+        </li>
+      </ul>-->
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <div class="d-flex align-items-center">
+              <div class="btn-group ml-auto">
+                <button class="btn btn-primary" [routerLink]="['/token-add']">
+                  <i class="fa fa-plus"></i>
+                  Add new
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label for="catergory_name">Search</label>
+                  <input type="text" class="form-control" id="catergory_name">
+                </div>
+              </div>
+
+             <!-- <div class="col-md-3">
+                <div class="form-group">
+                  <label for="Store">Store</label>
+                  <select class="form-control" id="Store">
+                    <option>All</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>
+                </div> -->
+
+              </div>
+           <!--  <div class="col-md-3">
+                <div class="form-group">
+                  <label style="margin-bottom: 5px;">&nbsp;</label>
+                  <button class="btn btn-default form-control">Apply filter</button>
+                </div>
+              </div>
+            </div>  --> 
+
+            <div class="table-responsive">
+              <table id="basic-datatables" class="display table table-striped table-hover">
+                <thead>
+                  <tr>
+                    <th>Problem Name</th>
+                    <th>Location</th>
+                    <th>Attention Level</th>
+                    <th>Added By</th>
+                    <th>Added Date</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr role="row" class="odd"  *ngFor="let t of service.list">
+                    <td><a>{{t.ProblemName}}</a></td>
+                    <td class="text-center">{{t.Location}}</td>
+                    <td class="text-center">{{t.AttentionLevel}}</td>
+                    <td class="text-center">{{t.AddedBy}}</td>
+                    <td class="text-center">{{t.AddedDate}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+         <!---<ew-pager [collectionSize]="totalManufacturerCount" (pageChange)="onPageChange($event)" [(page)]="activePage"
+            aria-label="Manufacturer pagination"></ew-pager>-->
+        </div>
+      </div>
+    </div>
+  </div>
